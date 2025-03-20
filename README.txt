@@ -171,5 +171,7 @@ Problemas com leitura de código - Estou bloqueando de onde o site pode ler scri
 conteúdo daquele site e mais os links que eu forneci. Isso pode causar problemas com a falta de leitura de 
 alguns scripts adicionados posteriormente // 19/03
 
+Criação dos fluxogramas: //Feito em HTML, salvo do google drive
+Drawio
 
 CSS - Animações:
