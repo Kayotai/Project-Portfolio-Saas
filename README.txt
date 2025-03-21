@@ -176,4 +176,39 @@ alguns scripts adicionados posteriormente // 19/03
 Criação dos fluxogramas: //Feito em HTML, salvo do google drive
 Drawio
 
+CSS anotações:
+
+//Geral
+.container parallax - Ele é a classe do main e é responsável por armazenar as sections. Os comandos que ele recebe são apenas para dizer que
+ele ocupa 100% da largura DÍSPONIVEL, que a posição dele é relativa para controlar o Sticky do parallax, scroll-snap-type diz que só pode rolar
+para o eixo y e que ele permanece ou na próxima section ou na anterior.
+.parallax - O scroll sempre tenta se alinhar no start, o sticky é o responsável por grudar as sections no topo da tela. Somente as sections possuem.
+
+Eu defini que o minimo de altura do footer, main, header e sections é 100vh.
+
+Todos os links tem suas decorações padrões retiradas.
+
+//Header
+Header - O background não pode ser repetido, a imagem se esconde caso não consiga aparecer inteiramente, posição top center.
+background-attachment faz o efeito parallax, mantendo ele fixo no HTML. Display faz uma coluna entre as 2 divs, a dos links e a da logo.
+
+.logo icon - Se trata das configurações da logo que é 100% CSS. Clip-path cria um polygono, eu defino uma altura e largura, depois crio 
+um background maior que o tamanho da div. Uma animação é executada indo de um lado a outro dentro da div(12s), animação infinita.
+
+.content--header - os comandos que ele recebe são apenas de alinhar os links, centralizar na nav e que o tamanho é 100% do espaço dísponivel, com altura de 20%. Tem uma background leve e com alpha diminuido
+
+.__nav__ - uma pequena margin para desgrudar das bordas do html, um flex que coloca os links lado a lado, um space-evelyn que usa todo o espaço disponível para a distribuição dos links e um alinhamento vertical.
+
+.__nav__ > a - cursor sempre vai ser pointer para os links na nav, aumentando a fonte e o bold. Uma transição para deixar as letras coloridas.
+
+.__nav__ > a:hover - defino um gradiente linear igual ao da logo, dou um clip para deixar somente no texto (webkit é para adaptar para alguns navegadores), cor transparente para mostrar o background. Defino a 
+mesma animação da logo, defino um tamanho para o background, assim a animação ocorre normalmente. A fonte aumenta de tamanho e dou um bold de 100%.
+
+.content-big-title - Defino uma altura para div. Uso display flex e centralizo tudo. 
+
+.big--logotipo--h1 - Aumenta o tamanho do h1, cursor default (estava aparecendo um | de digitação), espaçamento de letras, cria uma borda right para simular o |. A h1 ocupa toda a largura disponível. O texto não se quebra,
+o texto se esconde caso não tenha espaço e tem uma animação para surgir.
+
+
 CSS - Animações:
+

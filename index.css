@@ -25,11 +25,6 @@
     --cor6: #131212; /*Text2*/
 }
 
-/* Saying that the html will take up the entire screen */
-html, body {
-    width: 100%;
-}
-
 body {
     /* Letter configuration */
     font-family: var(--font1), var(--font2), sans-serif;
@@ -51,7 +46,7 @@ body {
     top: 0;
 }
 
-footer, main, header, .container-parallax, section {
+footer, main, header, section {
     /* the minimum div will be 100% of the viewport */
     min-height: 100vh;
 }
@@ -64,21 +59,6 @@ a {
 
 /* Header */
 
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.logo-icon {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--cor1), var(--cor3), var(--cor4), var(--cor5));
-    background-size: 900% 900%;
-    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-    animation: prisma 12s infinite linear;
-}
 
 
 header {
@@ -88,13 +68,28 @@ header {
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
-
-    /* header size */
-    min-height: 100vh;
-
+    
     /* Display, placing in column */
     display: flex;
     flex-direction: column;
+}
+
+.logo-icon {
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  
+    /* sizes */
+    width: 7rem;
+    height: 7rem;
+    
+    /* Background */
+    background: linear-gradient(135deg, var(--cor1), var(--cor3), var(--cor4), var(--cor5));
+    background-size: 900% 900%;
+    animation: prisma 12s infinite linear;
+
+
+    /* margin */
+    margin-right: 1rem;
+    margin-bottom: 1rem;
 }
 
 .content--header {
@@ -155,17 +150,6 @@ header {
     justify-content: center;
     align-items: center;
 
-}
-
-.bigsize {
-
-    /* sizes */
-    width: 7rem;
-    height: 7rem;
-
-    /* margin */
-    margin-right: 1rem;
-    margin-bottom: 1rem;
 }
 
 .big--logotipo--h1 {
