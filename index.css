@@ -1,4 +1,4 @@
-
+/* Importações Permitidas */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -10,30 +10,194 @@
     box-sizing: border-box;
 }
 
-
-
-body{
+:root {
     /* Variaveis */
     --font1:'Poppins';
     --font2: 'Inter';
-    --cor1: #007bff; /*Principal*/
-    --cor2: #f5f5f5; /*Secundaria*/
-    --cor3: #00c853; /*Ação*/
-    --cor4: #ff7043; /*Acento*/
+    --cor1: #1c2432; /*Principal*/
+    --cor2: #f5f5f5; /*Secundaria, texto*/
+    --cor3: #007a42; /*Ação*/
+    --cor4: #253554; /*Acento*/
     --cor5: #ffffff; /*Fundo*/
-    --cor6: #333333; /*Texto*/
+    --cor6: #131212; /*Texto2*/
+}
 
+/* Dizendo que o html vai ocupar toda a tela */
+html, body {
+    height: 100vh;
+}
+
+body {
     /* Configurações das letras */
     font-family: var(--font1), var(--font2), sans-serif;
-    color: var(--cor6);
+    color: var(--cor2);
 }
+
+header, footer {
+    position: relative;
+    width: 100%;
+}
+
+main > section, footer {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+section, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main > section:nth-child(even)
+{
+    background-color: #007a42;
+}
+
+a {
+    color: var(--cor2);
+    text-decoration: none;
+}
+
 /* Header */
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 600px; /* Adiciona profundidade */
+}
+
 .logo-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #007BFF, #00C853);
+    background: linear-gradient(135deg, var(--cor1), var(--cor3), var(--cor4), var(--cor5));
+    background-size: 900% 900%;
     clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    animation: prisma 12s infinite linear;
 }
+
+
+header {
+    /* Config do Background */
+    background-image: url(imagensSaaS/header/mobile/pheaderbackgroundMobH-Desktop.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+
+    /* Tamanho do header */
+    min-height: 100vh;
+
+    /* Display */
+    display: flex;
+    flex-direction: column;
+}
+
+.content--header {
+    /* Display */
+    display: flex;
+    justify-content: center;
+
+    /* Tamanhos */
+    width: 100%;
+    height: 20%;
+    
+
+    background-color: rgba(245, 245, 245, .4);
+}
+
+.__nav__ {
+    /* Tamanhos */
+    margin: .8rem;
+
+    /* Margens */
+    width: 100%;
+
+    /* Alinhando os links */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.__nav__ > a {
+    /* Detalhes */
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: inline-block;
+    transition: transform 0.8s ease-in-out;
+}
+
+.__nav__ > a:hover{
+       /* Animação Prisma*/
+       background: linear-gradient(135deg, var(--cor1), var(--cor3), var(--cor4), var(--cor5));
+       background-clip: text;
+       -webkit-background-clip: text;
+       color: transparent;
+       animation: prisma 6s infinite ease-in-out;
+       background-size: 600% 600%;
+
+       /* animação texto */
+       font-weight: bold;
+       transform: scale(1.2);
+}
+
+/* Header Big Logo */
+.content-big-title {
+    /* Tamanhos */
+    height: 34.4rem;
+
+    /* centralização */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content-big-title-two {
+    display: inline-block;
+}
+
+.bigsize {
+
+    /* tamanhos */
+    width: 7rem;
+    height: 7rem;
+
+    /* margem */
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.big--logotipo--h1 {
+    /* Fontes */
+    font-size: 5rem;
+    cursor: default;
+    letter-spacing: 12px;
+
+    /* Efeito de | */
+    border-right: 5px solid var(--cor1);
+
+    /* Tamanho */
+    width: 100%;
+
+    /* Não quebra linha */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s, cursor .4s step-end infinite alternate;
+}
+
+
+.big--logotipo--h1 > span {
+    /* fonte */
+    font-size: 4rem;
+}
+
+
 
 /* Main */
 
@@ -57,3 +221,25 @@ body{
   border-right: 10px solid transparent;
   border-top: 15px solid var(--cor1);
 }
+
+
+/* Animações */
+
+/* Animação do gradiente prismático */
+@keyframes prisma {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animação de pisca pisca */
+@keyframes cursor {50% {border-color: transparent;}}
+
+/* Efeito de surgimento do big titulo */
+@keyframes typing {from {width: 0;}} /* Em combinação com o overflow hidden, quando eu transformo o widht em 0, ele desaparece */

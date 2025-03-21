@@ -16,9 +16,9 @@
     <!-- indexing permission -->
     <meta name="robots" content="index, follow">
     <!-- Helping search engines find the page -->
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="#">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
     <!-- Segurity -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com; style-src 'self' https://fonts.googleapis.com; img-src 'self'; font-src 'self' https://fonts.googleapis.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com; style-src 'self' https://fonts.googleapis.com; img-src 'self'; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;">
     <!-- favicon -->
     <link rel="shortcut icon" href="imagensSaaS/ia-eficiente.png" type="image/x-icon">
     <!-- CSS -->
@@ -32,8 +32,7 @@
 
     <header> 
         <!-- logo e nav -->
-        <div class="content--header">
-            <div aria-hidden="true" class="logo-icon"></div>   
+        <div class="content--header">   
             <nav class="__nav__">
                 <a href="#" class="nav--header">About</a>
                 <a href="#" class="nav--header">Contact</a>
@@ -42,8 +41,10 @@
         </div>
         <!-- Big logotipo -->
          <div class="content-big-title">
-            <div class="logo-icon" aria-hidden="true"></div>
-            <h1 class="big--logotipo--h1">AI Help</h1>
+            <div class="logo-icon bigsize" aria-hidden="true"></div>
+            <div class="content-big-title-two">
+                <h1 class="big--logotipo--h1">IA Help!</h1>
+            </div>
          </div>
     </header>
 
@@ -69,11 +70,8 @@
         </section>
         <section class="social--proof">
             <div class="coments--container">
-                <button id="top" class="arrow up" aria-label="see previous comments"></button>
                 <div class="coments"></div>
-                <button id="bottom" class="arrow down" aria-label="see next comments"></button>
             </div>
-            <p>Do you want to see your comment here too? <a href="#">click here and login</a></p>
         </section>
         <section class="cards--list">
             <div class="lists">
@@ -102,11 +100,6 @@
                     </ul>
                 </div>
             </div>
-        </section>
-        <section class="reinforcement">
-            <p id="motivation">
-                Don't be afraid to evolve, your Intelligence is greater than that of this AI programmed by humans. This AI is just an assistant that writes good advice, you are the author of your story.
-            </p>
         </section>
     </main>
 

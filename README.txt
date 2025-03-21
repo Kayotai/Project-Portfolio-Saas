@@ -157,6 +157,8 @@ segurança usando HTML:
 - noreferrer além de atuar semelhantemente ao moopener, além disso o atributo impede 
 o site direcionado de saber a origem do site que redirecionou.
 
+segurança usando javascript:
+- Não use inner.html
 
 Segurança usando o servidor(Todos com 1 na frente estão sendo aplicados):
 X-Frame-Options: DENY                 # Impede ataques de Clickjacking
