@@ -1,15 +1,15 @@
-/* Importações Permitidas */
+/* Permitted imports */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-/* Config geral */
+/* General configuration */
 * {
-    /* Zerando tudo */
+    /* resetting everything */
     margin: 0;
     padding: 0;
 
-    /* Contabilizando as margins, paddings... */
+    /* accounting for margin and padding */
     box-sizing: border-box;
 }
 
@@ -40,18 +40,23 @@ body {
     /* Preparing the ground for the parallax effect */
     width: 100%;
     position: relative;
-    scroll-snap-align: start;
+    /* always locking the scrolling on the next or previous section */
+    scroll-snap-type: y mandatory;
 }
 
 .parallax {
+    /* always align the section scroll at the beginning */
+    scroll-snap-align: start;
     position: sticky;
     top: 0;
 }
 
 footer, main, header, .container-parallax, section {
+    /* the minimum div will be 100% of the viewport */
     min-height: 100vh;
 }
 
+/* link adjustment */
 a {
     color: var(--cor2);
     text-decoration: none;
@@ -64,7 +69,6 @@ a {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    perspective: 600px; /* Adiciona profundidade */
 }
 
 .logo-icon {
@@ -78,17 +82,17 @@ a {
 
 
 header {
-    /* Config do Background */
+    /* Config Background */
     background-image: url(imagensSaaS/header/mobile/pheaderbackgroundMobH-Desktop.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
 
-    /* Tamanho do header */
+    /* header size */
     min-height: 100vh;
 
-    /* Display */
+    /* Display, placing in column */
     display: flex;
     flex-direction: column;
 }
@@ -98,38 +102,37 @@ header {
     display: flex;
     justify-content: center;
 
-    /* Tamanhos */
+    /* size */
     width: 100%;
     height: 20%;
     
-
+    /* color */
     background-color: rgba(245, 245, 245, .4);
 }
 
 .__nav__ {
-    /* Tamanhos */
+    /* size, margins */
     margin: .8rem;
-
-    /* Margens */
     width: 100%;
 
-    /* Alinhando os links */
+    /* aligning the links */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
 .__nav__ > a {
-    /* Detalhes */
+    /* Details */
     cursor: pointer;
     font-size: 1.2rem;
     font-weight: 500;
-    display: inline-block;
+
+    /* animation */
     transition: transform 0.8s ease-in-out;
 }
 
 .__nav__ > a:hover{
-       /* Animação Prisma*/
+       /* Prisma animation */
        background: linear-gradient(135deg, var(--cor1), var(--cor3), var(--cor4), var(--cor5));
        background-clip: text;
        -webkit-background-clip: text;
@@ -137,70 +140,58 @@ header {
        animation: prisma 6s infinite ease-in-out;
        background-size: 600% 600%;
 
-       /* animação texto */
+       /* text animation */
        font-weight: bold;
        transform: scale(1.2);
 }
 
 /* Header Big Logo */
 .content-big-title {
-    /* Tamanhos */
+    /* sizes */
     height: 34.4rem;
 
-    /* centralização */
+    /* centralization */
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
-.content-big-title-two {
-    display: inline-block;
-}
-
 .bigsize {
 
-    /* tamanhos */
+    /* sizes */
     width: 7rem;
     height: 7rem;
 
-    /* margem */
+    /* margin */
     margin-right: 1rem;
     margin-bottom: 1rem;
 }
 
 .big--logotipo--h1 {
-    /* Fontes */
+    /* Fonts */
     font-size: 5rem;
     cursor: default;
     letter-spacing: 12px;
 
-    /* Efeito de | */
+    /* Effect | */
     border-right: 5px solid var(--cor1);
 
-    /* Tamanho */
+    /* Sizes */
     width: 100%;
 
-    /* Não quebra linha */
+    /* does not break lines and hides text if it has no space */
     white-space: nowrap;
     overflow: hidden;
     animation: typing 2s, cursor .4s step-end infinite alternate;
 }
 
-
-.big--logotipo--h1 > span {
-    /* fonte */
-    font-size: 4rem;
-}
-
-
-
 /* Main */
 
 
-/* Animações */
+/* Animation */
 
-/* Animação do gradiente prismático */
+/* prismatic gradient animation */
 @keyframes prisma {
     0% {
         background-position: 0% 50%;
@@ -213,8 +204,8 @@ header {
     }
 }
 
-/* Animação de pisca pisca */
+/* blink animation */
 @keyframes cursor {50% {border-color: transparent;}}
 
-/* Efeito de surgimento do big titulo */
-@keyframes typing {from {width: 0;}} /* Em combinação com o overflow hidden, quando eu transformo o widht em 0, ele desaparece */
+/* big-title emergence effect */
+@keyframes typing {from {width: 0;}} /* In combination with overflow hidden, when I set the width to 0, it disappears */
