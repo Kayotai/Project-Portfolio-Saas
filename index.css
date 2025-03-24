@@ -210,6 +210,8 @@ header {
 #question::before{
     content: attr(data-text);
     position: absolute;
+
+    /* size */
     width: 200px;
 
     /* colorful background */
@@ -225,10 +227,13 @@ header {
 
 .container-options {
     display: flex;
+
+    /* separation */
     gap: 20px;
 }
 
 label {
+    /* Config Label Align adjusted */
     cursor: pointer;
     padding: 10px;
     display: flex;
@@ -236,36 +241,44 @@ label {
     gap: 10px;
 }
 
-input[type="radio"]{
+
+input[type="radio"]{ /* Telling to get the inputs that have the radio type */
+    /* leaving invisible */
     display: none;
 }
 
-.toggle-label {
+.toggle-label { /*Words yes no*/
+    /* Details */
     display: inline-block;
-    border-radius: 8px;
     font-size: 1.5rem;
     font-weight: 700;
     cursor: pointer;
     transition: all .3s ease;
     user-select: none;
-    border: 2px solid transparent;
     position: relative;
 }
 
 .toggle-label::after{
+    /* displaying the text */
     content: attr(data-text);
+
+    /* Details */
     font-size: 1.8rem;
     color: inherit;
 }
 
+/* When it is marked */
 #no:checked + .toggle-label::after {
+    /* Emoji */
     content: '\274c';
     color: #cc0000;
     font-size: 1.8rem;
     
 }
 
+/* When it is marked */
 #yes:checked + .toggle-label::after {
+    /* Emoji */
     content: '\2714';
     color: #008000;
     font-size: 1.8rem;
