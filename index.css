@@ -171,6 +171,12 @@ header {
 }
 
 /* Main */
+
+.subheadline {
+    /* Color */
+    background-color: var(--cor6);
+}
+
 .objection {
     /* Sizes */
     height: 100vh;
@@ -181,23 +187,99 @@ header {
     align-items: center;  
 }
 
-.container-options > .yes > img {
-    background: none;
+
+.question-container {
+    /* Config align */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+#question {
+    /* preventing the "absolute" from coming out to the body */
+    position: relative;
+
+    /* adjustments */
+    font-size: 6rem;
+    color: rgba(100, 100, 100, 0.2);
+    margin-bottom: 2rem;
+}
+
+#question::before{
+    content: attr(data-text);
+    position: absolute;
+    width: 200px;
+
+    /* colorful background */
+    background: linear-gradient(135deg, var(--cor1), var(--cor3), var(--cor4), var(--cor5));
+    background-clip: text;
+
+    /* effect letter */
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #fff;
+    animation: effectletter 4s linear infinite;
+}
+
+.container-options {
+    display: flex;
+    gap: 20px;
+}
+
+label {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+.toggle-label {
+    display: inline-block;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s ease;
+    user-select: none;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.toggle-label::after{
+    content: attr(data-text);
+    font-size: 1.8rem;
+    color: inherit;
+}
+
+#no:checked + .toggle-label::after {
+    content: '\274c';
+    color: #cc0000;
+    font-size: 1.8rem;
+    
+}
+
+#yes:checked + .toggle-label::after {
+    content: '\2714';
+    color: #008000;
+    font-size: 1.8rem;
+}
+
 
 /* Animation */
 
 /* prismatic gradient animation */
-@keyframes prisma {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+@keyframes prisma 
+{
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
 
 /* blink animation */
@@ -205,3 +287,9 @@ header {
 
 /* big-title emergence effect */
 @keyframes typing {from {width: 0;}} /* In combination with overflow hidden, when I set the width to 0, it disappears */
+
+@keyframes effectletter 
+{
+    0%, 10%, 100%{width: 0;} 
+    70%, 90%{width: 100%;}
+}
