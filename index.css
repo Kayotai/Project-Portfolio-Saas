@@ -171,7 +171,19 @@ header {
 }
 
 /* Main */
+.objection {
+    /* Sizes */
+    height: 100vh;
+    
+    /* Display, align */
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
 
+.container-options > .yes > img {
+    background: none;
+}
 
 /* Animation */
 
