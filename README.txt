@@ -5,12 +5,12 @@ O objetivo desse projeto é criar um site que chame a atenção, passe a sensaç
 Sobre o que é o projeto: Um site de empreendedorismo, uma landing page que venda um SaaS.
 
 Cores do site:
-Cor Principal (Azul): #007BFF
+Cor Principal (Azul): #1c2432
 Cor Secundária (Cinza Claro): #F5F5F5
-Cor de Ação (Verde Limão): #00C853
-Cor de Acento (Laranja): #FF7043
+Cor de Ação (Verde Limão): #253554
+Cor de Acento (Laranja): #007a42
 Cor de Fundo (Branco): #FFFFFF
-Cor de Texto (Cinza Escuro): #333333
+Cor de Texto (Cinza Escuro): #131212
 
 fontes do site:
 Poppins 
@@ -29,8 +29,8 @@ Estrutura(Base):
   - .big--logo--h1 [Big logo]
 
 - Main:
-  - Subheadline (section/article): //Capturar imediatamente a atenção do visitante
-    - Perguntando o problema (interativo) 
+  - Subheadline (section/article): //Capturar a atenção do visitante
+    - Pergunta (interativo) 
     - Buttons (Sim e Não)
   - Section > Article:  //Apresentação do produto
     - h  //Apresentar os serviços
@@ -54,13 +54,14 @@ Estrutura(Base):
   - &copy
 
 Front-end:
-- Javascript (F:React)
+- Javascript (F:Node)
 - HTML
 - CSS
 
 Back-end:
-- Django
-- Python 
+- Node
+- Javascript
+- MySQL
 
 
 palavras chaves:
@@ -208,6 +209,41 @@ mesma animação da logo, defino um tamanho para o background, assim a animaçã
 
 .big--logotipo--h1 - Aumenta o tamanho do h1, cursor default (estava aparecendo um | de digitação), espaçamento de letras, cria uma borda right para simular o |. A h1 ocupa toda a largura disponível. O texto não se quebra,
 o texto se esconde caso não tenha espaço e tem uma animação para surgir.
+
+//Subheadline
+
+.subheadline - Altera a cor de fundo.
+
+.objection - Aumenta a altura para 100% da tela
+
+.question-container - Diz que o comportamento vai ser de coluna e que o mínimo de tela é 100vh.
+
+.question-container, .objection - alinhando ambos.
+
+#question - posição relativa para prender o absolute, aumento de fonte, cor de fonte e margem bottom. 
+
+#question::before - Mostrando o texto do data-text e com posição absoluta, largura de 200px, linear gradiente preso no texto. Dizendo que se meu texto não caber ele vai se esconder.
+a borda simula o |. Animação linear e infinita(effectletter).
+
+.container-options - dizendo que minhas opções de respostas vão ficar lado a lado. Dando uma distancia a mais entre as opções.
+
+label - cursor é pointer, deixando as opções lado a lado. Alinhamento central e um gap de 10px.
+
+input[type="radio"] - dizendo para os input radio não aparecerem.
+
+.toggle-label - aumentando a fonte, dando um bold, enfeitando o cursor, uma posição relativa
+
+.toggle-label::after - Mostrando o texto do data-text, aumentando a fonte, dizendo para pegar a cor do pai.
+
+#no:checked + .toggle-label::after - Se for marcado, mostro o emoji (alterando o content colocado no .toggle-label::after). Mudando a cor e arrumando o tamanho.
+
+#yes:checked + .toggle-label::after - Se for marcado, mostro o emoji (alterando o content colocado no .toggle-label::after). Mudando a cor e arrumando o tamanho.
+
+.solution - Alinhamento e ficando em coluna, mudando a cor do background
+
+.solution > h2 - fonte aumentada, cor das letras (cor2).
+
+.solution > p - fontes aumentadas, aumentando o espaço entre as letras, margem para ajustar o texto, cor alterada.
 
 
 CSS - Animações:

@@ -180,21 +180,19 @@ header {
 .objection {
     /* Sizes */
     height: 100vh;
-    
-    /* Display, align */
-    display: flex;
-    justify-content: center;
-    align-items: center;  
 }
 
 
 .question-container {
     /* Config align */
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.question-container, .objection {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 #question {
@@ -202,9 +200,10 @@ header {
     position: relative;
 
     /* adjustments */
-    font-size: 6rem;
+    font-size: clamp(8px, 40px, 200px);
     color: rgba(100, 100, 100, 0.2);
     margin-bottom: 2rem;
+    white-space: nowrap;
 }
 
 #question::before{
@@ -212,7 +211,7 @@ header {
     position: absolute;
 
     /* size */
-    width: 200px;
+    width: 80%;
 
     /* colorful background */
     background: linear-gradient(135deg, var(--cor1), var(--cor3), var(--cor4), var(--cor5));
@@ -235,7 +234,6 @@ header {
 label {
     /* Config Label Align adjusted */
     cursor: pointer;
-    padding: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -249,11 +247,9 @@ input[type="radio"]{ /* Telling to get the inputs that have the radio type */
 
 .toggle-label { /*Words yes no*/
     /* Details */
-    display: inline-block;
     font-size: 1.5rem;
     font-weight: 700;
     cursor: pointer;
-    transition: all .3s ease;
     user-select: none;
     position: relative;
 }
@@ -283,6 +279,38 @@ input[type="radio"]{ /* Telling to get the inputs that have the radio type */
     color: #008000;
     font-size: 1.8rem;
 }
+
+.solution {
+    /* Align */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    /* color */
+    background-color: var(--cor3);
+
+}
+
+.solution > h2 {
+    font-size: 4em;
+    color: var(--cor2);
+}
+
+.solution > p {
+    /* Details */
+    font-size: 1.4em;
+    word-spacing: 2px;
+    white-space: wrap;
+
+    /* margin */
+    margin: 10px 10%;
+
+    /* color */
+    color: var(--cor2);
+}
+
+
 
 
 /* Animation */
